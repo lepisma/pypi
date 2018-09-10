@@ -23,16 +23,16 @@
   "Return a list of files for the current package."
   (directory-files (concat default-directory package) nil "[a-z]+\\.\\(whl\\|tar\\.gz\\)"))
 
-(defun pypi-generate-links (items)
+(defun pypi-generate-links (items &optional index-page)
   (string-join
-   (mapcar (lambda (path) (format "<a href=\"%1$s\">%1$s</a><br>" path))
+   (mapcar (lambda (path) (format "<a href=\"%1$s%2$s\">%1$s</a><br>" path (if index-page "/index.html" "")))
            (sort items #'string-lessp))
    "\n"))
 
 (defun pypi-generate-master-index ()
   "Generate master index file."
   (let ((packages (pypi-packages)))
-    (format pypi-html-template "personal-package-index" (pypi-generate-links packages))))
+    (format pypi-html-template "personal-package-index" (pypi-generate-links packages t))))
 
 (defun pypi-generate-package-index (package)
   "Generate index page for given package."
