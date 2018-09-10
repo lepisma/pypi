@@ -1,0 +1,9 @@
+#+TITLE: pypi
+
+Personal pypi.
+
+#+NAME: om-generate
+#+BEGIN_SRC emacs-lisp :results none
+  (load (expand-file-name "./pypi-gen.el"))
+  (pypi-generate)
+#+END_SRC
