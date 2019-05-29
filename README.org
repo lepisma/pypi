@@ -1,6 +1,6 @@
 #+TITLE: pypi
 
-Personal pypi. Up [[https://lepisma.github.io/pypi][here]].
+Personal pypi. Up [[https://lepisma.xyz/pypi][here]].
 
 #+NAME: om-generate
 #+BEGIN_SRC emacs-lisp :results none
